@@ -61,6 +61,12 @@ Part 2: Max-Value Aggregation with Constrained Shared Memory
 
 ### Performance Evaluation
 
+![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Screenshot/maxagg_process.png) 
+![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Screenshot/maxagg_thread.png) 
+![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Screenshot/parallel_sort_process.png) 
+![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Screenshot/parallel_sort_process.png)
+
+
 ### Conclusion
 
 
