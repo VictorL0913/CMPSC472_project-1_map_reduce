@@ -1,4 +1,4 @@
-# CMPSC472_project-1_map_reduce
+# CMPSC472 Project 1 MapReduce
 
 ### Project Overview
 
