@@ -47,15 +47,20 @@ Part 2: Max-Value Aggregation with Constrained Shared Memory
 
 #### Part 1: Parallel Sort 
 
-1. Multithread
-    1. 
-2. Multiprocess
-   
+![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Diagrams/parallel_sort_threads.png) 
+
+In the multithread version, a single process creates multiple threads using pthread_create() and each thread share the same space and memory so no IPC mechanism is required. The threads will directly access and modify the global raay during the map phase when they sort the chunks that they are assigned, After the threads are complete teh main thread performs the reduce phase which iteratively merge the sorted chunks within the shared memory.
+  
+![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Diagrams/parallel_sort_process_diagram.png)
+
+In the multiprocess version, the parent process creates child processes using fork(), and since each process has their own memory, some kind of IPC is required. In this project, the array is allocated in a shared memory region using mmap(), which allows all processes to read and write the same data. Each process will sort their assigned chunks in the Map phase, and after all the processes exit, the parent process performs the reduce phase by merging the sorted chunks from the shared memory. 
+
+
 #### Part 2: Max-Value Aggregation
 
-1. Multithread
+![alt text]() 
 
-2. Multiprocess
+![alt text]() 
 
 ### Description of Tools and Methods
 
