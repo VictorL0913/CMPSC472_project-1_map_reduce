@@ -15,7 +15,7 @@ This project experiments with parallel computation using the MapReduce programmi
   * Map phase - the input is split into chunks and processed independently in parallel using merge sort or quick sort
   * Reduce phase - the partial results are combines to produce a final result
     
-#### Multithreading vc Multiprocessing
+#### Multithreading vs. Multiprocessing
 
 Although both methods will allw parallelism, they differ:
   1. Multithreading
