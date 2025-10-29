@@ -58,11 +58,27 @@ In the multiprocess version, the parent process creates child processes using fo
 
 #### Part 2: Max-Value Aggregation
 
-![alt text]() 
+![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Diagrams/maxagg_thread_diagram.png) 
 
-![alt text]() 
+In the multithread version, the main array is divided into chunks and each thread compute the local max for the chunks that they are assigned. In the map phase, the threads will be concurrently work on portions of the data. After calculating the local max, each thread will try to update the global max which is the reduce phase. A mutex is used to ensure that only 1 thread can modify the global max at a time to prevent cases of race conditions.
+
+![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Diagrams/maxagg_pro_diagram.png) 
+
+In the multiprocess version, each worker is created using fork(), and each process computes the local max for each of the assigned chunks (map phase). Since processes have separate memory spaces, the global max is stored in shared memory using mmap. Synchronization is implemented by using a process shared mutex so that updates to the global max occur atomically during the reduce phase. 
 
 ### Description of Tools and Methods
+
+#### Part 1
+
+##### Multithread implementation
+
+##### Multiprocess implementation
+
+#### Part 2
+
+##### Multithread implementation
+
+##### Multiprocess implementation
 
 ### Performance Evaluation
 
