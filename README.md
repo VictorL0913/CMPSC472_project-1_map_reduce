@@ -25,7 +25,7 @@ Although both methods will allw parallelism, they differ:
        
 #### Assignment Tasks
 
-Part 1: Parallel Sorting (MapReduce Style)
+**Part 1: Parallel Sorting (MapReduce Style)**
 - Input: Large array of integers (two lengths: 32, 131,072)
 - Map Phase: Divide the array into chunks and sort each chunk in parallel using Merge Sort or Quick Sort.
 - Reduce Phase: Merge sorted chunks into a final sorted array.
@@ -34,7 +34,7 @@ Part 1: Parallel Sorting (MapReduce Style)
 - Use IPC (e.g., message passing or shared memory) to pass sorted chunks to the reducer.
 - Measure execution time and memory usage for 1, 2, 4, and 8 workers for map phase
  
-Part 2: Max-Value Aggregation with Constrained Shared Memory
+**Part 2: Max-Value Aggregation with Constrained Shared Memory**
 - Task: Compute the global maximum value.
 - Map Phase: Each worker computes the local maximum of its chunk. Workers attempt to update a shared memory buffer that holds only one value — the current global maximum.
 - Reduce Phase: A single reducer reads the final value from the shared buffer.
