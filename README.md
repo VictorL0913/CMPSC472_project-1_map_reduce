@@ -45,7 +45,7 @@ Although both methods will allw parallelism, they differ:
 
 **How To Run**
 - To run the project - use the Google Colab link to run the cells: https://colab.research.google.com/drive/1Tn-eD0QTtMYzaM8Xp269MGuLHC4QWKY_#scrollTo=eNOy6whF2fDB
-- Another way is to copy the .c files in part1 and part2 folder to own notebook any run using shell commands like:
+- Another way is to copy the .c files in part1 and part2 folder to own notebook and run using shell commands like:
   ```bash
   !gcc parallel_sort_thread.c -pthread -o p1_threads  // replace based on file 
   !./p1_threads 32 1
