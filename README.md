@@ -120,10 +120,14 @@ The multiprocess version implementation uses fork() to create worker processes, 
 
 ### Performance Evaluation
 
+#### Parallel Sort
+
 ![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Screenshot/parallel_sort_process.png) 
 ![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Screenshot/parallel_sort_process.png)
 
 The correctness for both implementations was verified using a small array of size 32. In the multithread implemenation the execution times decreased as the number of workers increased from 1 to 8 that ranged from 27.215ms to 16.797ms when the input size was 131,072. With the same input, the multiprocess version showed decreases initially, but increased when there was 8 processes (4 works timed at 17.168ms with 8 workers timed at 19.217ms). This reflects the additional overhead that comes with the multiprocess implementation with shared memory and process management. Threads are faster since they share the same memory and require minimal synchronization mechanism. Multiprocess need mmap() for shared memory and wait() for synchronization, which adds overhead. With more processes created (8), the time reflects the additional overhead that is caused by mmap() and wait(). Overall, threads scale better as worker count is increased since they share the same memory space and require less synchronization which is why threads have less overhead. Multiprocess causes extra overhead due to IPC and process management which caused the inefficiencies in performance as worker counts increased.
+
+#### Max-Value Aggregation
 
 ![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Screenshot/maxagg_process.png) 
 ![alt text](https://github.com/VictorL0913/CMPSC472_project-1_map_reduce/blob/main/Screenshot/maxagg_thread.png) 
